@@ -23,20 +23,3 @@ npm i @prisma/client -D (Biblioteca que consulta o banco de dados)
 
 docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnamilegacy/postgresql
 
-
-http://localhost:3333/users
-
-{
-	"name": "gabriel",
-	"email": "gabriel@email.com",
-	"password_hash": "teste123"
-}
-
-500 Internal Server Error
-The server has encountered a situation it doesn't know how to handle.
-
-{
-	"statusCode": 500,
-	"error": "Internal Server Error",
-	"message": "[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"password\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  }\n]"
-}

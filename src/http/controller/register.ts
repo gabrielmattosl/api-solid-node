@@ -9,7 +9,7 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
     email: z.email(),
     password: z.string().min(6),
   })
-  
+
   const { name, email, password } = registerBodySchema.parse(request.body)
 
   const password_hash = await hash(password, 6)
@@ -21,7 +21,7 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
   })
 
   if (userWithSameEmail) {
-    return reply.status(409).send("já tem email aqui")
+    return reply.status(409).send('já tem email aqui')
   }
 
   await prisma.user.create({
