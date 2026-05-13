@@ -21,7 +21,7 @@ export async function registerUserCase({
   })
 
   if (userWithSameEmail) {
-    throw new Error('já tem email aqui')
+    throw new Error('Email já cadastrado. Por favor, use outro email.')
   }
 
   await prisma.user.create({
